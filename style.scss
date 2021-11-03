@@ -1,0 +1,383 @@
+// setup
+$orange: #AC6458;
+$green: #C8D6BD;
+$violet: #A79EAF;
+$blue: #A5B3BC;
+@font-face{
+    font-family: 'NeueMontreal-Light';
+    src: url('/src/fonts/NeueMontreal-Light.otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'NeueMontreal-Light';
+}
+::-webkit-scrollbar{
+    display: none;
+}
+// landing Page
+header{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    max-width: 49rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+    text-align: center;
+    .header-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        video{
+            height: auto;
+            width: 100%;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+    .header-overlay{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.39);
+        z-index: 1;
+    }
+    .header-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        z-index: 2;
+        overflow: hidden;
+        .header-logo{
+            width:500px;
+            height: 100px;
+            display: inline-block;
+            background-image: url('/src/img/Quarantine.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        h1{
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            
+        }
+        h2{
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        .header-btn{
+            width: 100vw;
+            margin-top: 5rem;
+            padding: 10px;
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: .8rem;
+            letter-spacing: 2px;
+        }
+        .header-btn:hover, .header-btn:focus, .header-btn:active{
+            animation-name: btn;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes btn {
+            0% {
+            background-color: rgba(0, 255, 255, 0);
+            background-color:$violet;
+            }
+        
+            100% {
+            background-color: rgba(0, 255, 255, 0);
+            background-color: rgba(127, 219, 255, 0);
+            }
+        }
+        hr{
+            width: 60rem;
+            height: 1px;
+            border: none;
+            margin: 0;
+            background-color: white;
+            animation: trought 5s linear infinite;
+        }
+        @keyframes trought{
+            0%{
+                transform: translateX(-100rem);
+            }
+            100%{
+                transform: translateX(200rem);
+            }
+        }
+        .social{
+            width: 90%;
+            height: auto;
+            margin-top: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .media{
+                border: 1px solid $orange;
+                padding: .8rem;
+                text-decoration: none;
+                color: white;
+                letter-spacing: 2px;
+                font-size: .8rem;
+            }
+        }
+        .media:hover, .media:focus, .media:active{
+            animation-name: highlighter;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes highlighter {
+            0% {
+            background-color: rgba(0, 255, 255, 0);
+            background-color:$orange;
+            }
+        
+            100% {
+            background-color: rgba(0, 255, 255, 0);
+            background-color: rgba(127, 219, 255, 0);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 750px) {
+    .header-logo{
+        background-color: red;
+    }
+}
+
+// audio
+.audio{
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    z-index: 3;
+}
+
+// Home Page
+#home{
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .main-lateral-photo{
+        width: 50%;
+        height: 100vh;
+        position: absolute;
+        display: inline-block;
+        background-image: url('/src/img/pexels-shvets-production-9775850.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .home-text{
+        width: 50%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 50%;
+        display: grid;
+        place-content: center;
+        padding: 0 20px ;
+        p{
+            font-size: 5rem;
+            color: $blue;
+            letter-spacing: 2px;
+        }
+    }
+    nav{
+        position: absolute;
+        width: 100%;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 1px solid white;
+        background-color: $green;
+        .nav-logo{
+            width: 200px;
+            height: 50px;
+            display: inline-block;
+            background-image: url('/src/img/Quarantine.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .main-nav{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            .nav-item{
+                margin: 0 10px;
+                font-size: .8rem;
+                list-style: none;
+                position: relative;
+                background-color: transparent;
+                border: 1px solid white;
+                padding: 5px;
+                .subnav{
+                    position: absolute;
+                    display: none;
+                    width: 100%;
+                    height: auto;
+                    margin-left: 10px;
+                    background-color: white;
+                    li{
+                        margin: 0 10px;
+                        font-size: .8rem;
+                        list-style: none;
+                        position: relative;
+                        background-color: transparent;
+                        padding: 5px;
+                        .subnav-item{
+                            letter-spacing: 2px;
+                            text-decoration: none;
+                            background-color: white;
+                            color: $blue;
+                        }
+                    }
+                    
+                }
+                .nav-link{
+                    text-decoration: none;
+                    letter-spacing: 2px;
+                    color: white;
+                    transition: 2s linear;
+                }
+                
+            }
+            .nav-item:hover{
+                background-color: $blue;
+                border: none;
+                .subnav{
+                    margin-top: 5px;
+                    display: block;
+                    .subnav-item{
+                        background-color: white;
+                    }
+                }
+            }
+        }
+        .icons{
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            li{
+                margin: 0 10px;
+                list-style: none;
+                a{
+                    transition: transform 1.2s linear;
+                    .search{
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('/src/img/search.png');
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .fav{
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('/src/img/heart.png');
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .user{
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('/src/img/user.png');
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .car{
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('/src/img/shopping.png');
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
+                &:hover{
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+}
+//  CyberMonday Page
+#cybermonday{
+    margin-top: 3rem;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    background-image: url('/src/img/cybermonday.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    .cybermonday-btn{
+        text-align: center;
+        position: absolute;
+        top: 70%;
+        left: calc(50% - 100px);
+        width: 200px;
+        margin-top: 5rem;
+        padding: 10px;
+        background-color: transparent;
+        color: $orange;
+        border: 1px solid $orange;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .8rem;
+        letter-spacing: 2px;
+    }
+    .cybermonday-btn:hover, .cybermonday-btn:focus, .cybermonday-btn:active{
+        animation-name: btnCyber;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes btnCyber {
+        0% {
+        background-color: rgba(0, 255, 255, 0);
+        background-color:$orange;
+        }
+    
+        100% {
+        background-color: rgba(0, 255, 255, 0);
+        background-color: rgba(127, 219, 255, 0);
+        }
+    }
+    
+
+}
